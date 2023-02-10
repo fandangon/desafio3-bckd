@@ -37,7 +37,7 @@ class ProductManager{
             let id = productos.lenght + 1;
             let newProduct = new Productos(id, title, description, price, thumbnail, code, stock);
             productos.push(newProduct);
-            await fs.promises.writeFile(this.path, JSON.stringify(productos, null, 2));
+            await fs.promises.writeFile(this.path, JSON.stringify(productos,null,2));
             console.log(`El producto ${title} se añadio con el ID ${id}`);
             }
         }
@@ -63,7 +63,7 @@ class ProductManager{
                 productos[productIndex].thumbnail = thumbnail;
                 productos[productIndex].code = code;
                 productos[productIndex].stock = stock;
-                await fs.promises.writeFile(this.path, JSON.stringify(productos, null, 2));
+                await fs.promises.writeFile(this.path, JSON.stringify(productos,null,2));
                 console.log(`El producto ${title} con ID ${id} se actualizo`);
             } else {
                 console.log("Producto no encontrado");
@@ -76,7 +76,7 @@ class ProductManager{
             let productoExiste = productIndex !== -1;
             if(productoExiste) {
                 productos[productIndex] = {};
-                await fs.promises.writeFile(this.path, JSON.stringify(productos, null, 2));
+                await fs.promises.writeFile(this.path, JSON.stringify(productos,null,2));
                 console.log(`El producto con ID ${id} se ha borrado`);
             } else {
                 console.log("Producto no encontrado");
@@ -88,8 +88,9 @@ class ProductManager{
 
     let app = new ProductManager("../files/productos.json");
 
+    /* Llamar Métodos */
     //app.getProductos().then(productos => console.log(productos));
-    app.addProduct("Jabon", "Prueba", 200, "Imagen", "code1", 30);
+    //app.addProduct("Jabon", "Prueba", 200, "Imagen", "code1", 30);
     //app.getProductos().then(productos => console.log(productos));
     //app.getProductById(1).then(producto => console.log(producto));
     //app.updateProduct(1, "Pan", "modificar", 250, "imagen", "code222", 30);
