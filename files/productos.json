@@ -1,0 +1,11 @@
+[
+  {
+    "id": null,
+    "title": "Jabon",
+    "description": "Prueba",
+    "price": 200,
+    "thumbnail": "Imagen",
+    "code": "code1",
+    "stock": 30
+  }
+]
